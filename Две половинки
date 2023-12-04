@@ -1,0 +1,5 @@
+import math
+a = input()
+s = len(a)
+l = math.ceil(s/2)
+print(a[l::]+a[0:l])

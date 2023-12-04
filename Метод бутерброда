@@ -1,0 +1,4 @@
+word = str(input())
+word = word[:-1]
+result = ''.join(word[::2] + word[1::2][::-1])
+print(result)

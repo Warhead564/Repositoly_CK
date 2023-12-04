@@ -1,0 +1,4 @@
+a = input()
+s = 1
+s += a.count(' ')
+print(s)

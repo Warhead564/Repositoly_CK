@@ -1,0 +1,28 @@
+def is_vowel(letter):
+    # Функция для проверки, является ли буква гласной
+    return letter in 'aeiouy'
+
+def make_melodious(word):
+    # Функция для определения минимального количества добавленных букв
+    min_additions = 0
+    vowels = 0  # Счетчик подряд идущих гласных
+    consonants = 0  # Счетчик подряд идущих согласных
+    for letter in word:
+        if is_vowel(letter):
+            vowels += 1
+            consonants = 0
+            if vowels > 2:
+                min_additions += 1
+                vowels = 2
+        else:
+            consonants += 1
+            vowels = 0
+            if consonants > 2:
+                min_additions += 1
+                consonants = 2
+    return min_additions
+
+
+word = input()
+
+print(make_melodious(word))
